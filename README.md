@@ -22,7 +22,7 @@ var Listeners = require('listeners');
 
 #### `var listeners = new Listeners([onError])`
 
-#### `listeners.add(fn, [ctx], [userData])`
+#### `listeners.add(fn, [ctx])`
 
 #### `listeners.remove(fn, [ctx])`
 

@@ -14,15 +14,15 @@ function Listeners(onError) {
     this._onError = onError || defaultErrorHandler;
 }
 
-Listeners.prototype.add = function(fn, ctx, userData) {
-    this._listeners.push(fn, ctx, userData);
+Listeners.prototype.add = function(fn, ctx) {
+    this._listeners.push(fn, ctx);
     return fn;
 }
 
 Listeners.prototype.remove = function(fn, ctx) {
-    for (var i = 0, ls = this._listeners; i < ls.length; i += 3) {
+    for (var i = 0, ls = this._listeners; i < ls.length; i += 2) {
         if (ls[i] === fn && (!ctx || ls[i+1] === ctx)) {
-            ls.splice(i, 3);
+            ls.splice(i, 2);
             return;
         }
     }
@@ -33,7 +33,7 @@ Listeners.prototype.clear = function() {
 }
 
 Listeners.prototype.fire = function() {
-    for (var ls = this._listeners, i = ls.length - 3; i >= 0; i -= 3) {
+    for (var ls = this._listeners, i = ls.length - 2; i >= 0; i -= 2) {
         try {
             ls[i].apply(ls[i+1], arguments);
         } catch (err) {
@@ -45,7 +45,7 @@ Listeners.prototype.fire = function() {
 }
 
 Listeners.prototype.fireArray = function(ary) {
-    for (var ls = this._listeners, i = ls.length - 3; i >= 0; i -= 3) {
+    for (var ls = this._listeners, i = ls.length - 2; i >= 0; i -= 2) {
         try {
             ls[i].apply(ls[i+1], ary);
         } catch (err) {
