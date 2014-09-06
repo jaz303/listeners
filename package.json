@@ -1,0 +1,32 @@
+{
+  "name": "listeners",
+  "version": "1.0.0",
+  "description": "Manage collections of listener functions/callbacks",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {
+    "tape": "^2.14.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "node test/all.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jaz303/listeners.git"
+  },
+  "keywords": [
+    "callback",
+    "listener",
+    "collection",
+    "events"
+  ],
+  "author": "Jason Frame <jason@onehackoranother.com> (http://jasonframe.co.uk)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jaz303/listeners/issues"
+  },
+  "homepage": "https://github.com/jaz303/listeners"
+}

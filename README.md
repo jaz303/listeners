@@ -31,3 +31,7 @@ var Listeners = require('listeners');
 #### `listeners.fire(args...)`
 
 #### `listeners.fireArray(args)`
+
+#### `Listeners.onError(errorHandler)`
+
+Set the default error handler for new instances.
