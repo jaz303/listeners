@@ -1,6 +1,6 @@
 {
   "name": "listeners",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Manage collections of listener functions/callbacks",
   "main": "index.js",
   "directories": {
