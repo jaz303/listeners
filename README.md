@@ -35,3 +35,7 @@ var Listeners = require('listeners');
 #### `Listeners.onError(errorHandler)`
 
 Set the default error handler for new instances.
+
+## Error Handling
+
+Should a listener function throw an error, the default behaviour is to log it and continue firing any remaining listeners. This behaviour can be overridden by passing an error handling to the `Listeners` constructor, or by setting a default error handler. An error handler can return `false` to indicate that no further listener functions should be triggered for this event, or alternatively you can rethrow the exception and it will be propagated to as usual.
