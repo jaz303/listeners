@@ -37,7 +37,7 @@ Listeners.prototype.fire = function() {
         try {
             ls[i].apply(ls[i+1], arguments);
         } catch (err) {
-            if (this.onError(err) === false) {
+            if (this._onError(err) === false) {
                 break;
             }
         }
@@ -49,7 +49,7 @@ Listeners.prototype.fireArray = function(ary) {
         try {
             ls[i].apply(ls[i+1], ary);
         } catch (err) {
-            if (this.onError(err) === false) {
+            if (this._onError(err) === false) {
                 break;
             }
         }

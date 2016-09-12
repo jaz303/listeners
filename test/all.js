@@ -146,3 +146,35 @@ test('clear', function(assert) {
     assert.end();
 
 });
+
+test('error handling - fire', function(assert) {
+
+    var triggered = false;
+    var ls = new Listeners(function() {
+        triggered = true;
+    });
+
+    ls.add(function() { xyzzy(); });
+    ls.fire();
+
+    assert.ok(triggered);
+
+    assert.end();
+
+});
+
+test('error handling - fireArray', function(assert) {
+
+    var triggered = false;
+    var ls = new Listeners(function() {
+        triggered = true;
+    });
+
+    ls.add(function() { xyzzy(); });
+    ls.fireArray([]);
+
+    assert.ok(triggered);
+    
+    assert.end();
+
+});
